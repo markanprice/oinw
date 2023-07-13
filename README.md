@@ -1,2 +1,1 @@
-# oinw
-Open in New Window Testing
+# This is the content of the `README.md` for the `oinw` repository
