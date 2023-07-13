@@ -38,10 +38,10 @@
     <section>
       <div class="container">
         <h2>Method 1</h2>
-        <p><button type="button" onclick="">Test A</button></p>
-        <p><button type="button" onclick="">Test B</button></p>
-        <p><button type="button" onclick="">Test C</button></p>
-        <p><button type="button" onclick="">Test D</button></p>
+        <p><button type="button" onclick="window.open('https://www.google.co.uk/search?q=Test1B', "_blank");">Test A</button></p>
+        <p><button type="button" onclick="onTest1BClick()">Test B</button></p>
+        <p><button type="button" onclick="onTest1CClick()">Test C</button></p>
+        <p><button type="button" onclick="onTest1DClick()">Test D</button></p>
       </div>
     </section>
 
@@ -61,7 +61,28 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.4.0/axios.min.js" integrity="sha512-uMtXmF28A2Ab/JJO2t/vYhlaa/3ahUOgj1Zf27M5rOo8/+fcTUVH0/E0ll68njmjrLqOBjXM3V9NiPFL5ywWPQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script>
-      const on1BClick = () => { window.open('https://www.google.co.uk/search?q=Test1B', "_blank"); }
+      const googleBaseUrl = 'https://www.google.co.uk/search?q=Test+';
+      const blankTarget = '_blank';
+      const queryUrl = '';
+  
+      const openInNewWindow1 = (suffix) => {
+        window.open(googleBaseUrl+suffix, blankTarget);
+      };
+      const onTest1BClick = () => {
+        openInNewWindow1('1B');
+      };
+      const onTest1CClick = () => {
+        axios.get(queryUrl).then(() => {
+          openInNewWindow1('1C');
+        });
+      };
+      const onTest1DClick = () => {
+        axios.get(queryUrl).then(() => {
+          setTimeout(() => {
+            openInNewWindow1('1D');
+          };
+        });
+  }
     </script>
   </body>
 </html>
