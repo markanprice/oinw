@@ -1,4 +1,4 @@
-<!doctype html>
+t<!doctype html>
 <html lang="en">
   <head>
     <!-- Required meta tags -->
@@ -57,7 +57,7 @@
       <div class="container">
         <h2>Method 2</h2>
         <p>
-          <button type="button" class="btn btn-secondary" onclick="" disabled>Test A</button>
+          <button type="button" class="btn btn-secondary" onclick="alert('Not implemented!")">Test A</button>
         </p>
         <p>
           <button type="button" class="btn btn-secondary" onclick="onTest2BClick()">Test B</button>
@@ -96,6 +96,25 @@
         axios.get(queryUrl).then(() => {
           setTimeout(() => {
             openInNewWindow1('1D');
+          };
+        });
+      };
+
+      const openInNewWindow2 = (suffix) => {
+        alert('TODO: openInNewWindow2()...');
+      };
+      const onTest2BClick = () => {
+        openInNewWindow2('2B');
+      };
+      const onTest2CClick = () => {
+        axios.get(queryUrl).then(() => {
+          openInNewWindow2('2C');
+        });
+      };
+      const onTest2DClick = () => {
+        axios.get(queryUrl).then(() => {
+          setTimeout(() => {
+            openInNewWindow2('2D');
           };
         });
       };
