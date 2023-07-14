@@ -39,7 +39,7 @@ t<!doctype html>
       <div class="container">
         <h2>Method 1</h2>
         <p>
-          <button type="button" class="btn btn-secondary" onclick="window.open('https://www.google.co.uk/search?q=Test1B', "_blank");">Test A</button>
+          <button type="button" class="btn btn-secondary" onclick="window.open('https://www.google.co.uk/search?q=Test1B', '_blank')">Test A</button>
         </p>
         <p>
           <button type="button" class="btn btn-secondary" onclick="onTest1BClick()">Test B</button>
@@ -81,43 +81,43 @@ t<!doctype html>
       const blankTarget = '_blank';
       const queryUrl = '';
   
-      const openInNewWindow1 = (suffix) => {
+      function openInNewWindow1(suffix) {
         window.open(googleBaseUrl+suffix, blankTarget);
-      };
-      const onTest1BClick = () => {
+      }
+      function onTest1BClick() {
         openInNewWindow1('1B');
-      };
-      const onTest1CClick = () => {
+      }
+      function onTest1CClick() {
         axios.get(queryUrl).then(() => {
           openInNewWindow1('1C');
         });
-      };
-      const onTest1DClick = () => {
+      }
+      function onTest1DClick() {
         axios.get(queryUrl).then(() => {
           setTimeout(() => {
             openInNewWindow1('1D');
           };
         });
-      };
+      }
 
-      const openInNewWindow2 = (suffix) => {
+      function openInNewWindow2(suffix) {
         alert('TODO: openInNewWindow2()...');
-      };
-      const onTest2BClick = () => {
+      }
+      function onTest2BClick() {
         openInNewWindow2('2B');
-      };
-      const onTest2CClick = () => {
+      }
+      function onTest2CClick() {
         axios.get(queryUrl).then(() => {
           openInNewWindow2('2C');
         });
-      };
-      const onTest2DClick = () => {
+      }
+      function onTest2DClick() {
         axios.get(queryUrl).then(() => {
           setTimeout(() => {
             openInNewWindow2('2D');
           };
         });
-      };
+      }
   }
     </script>
   </body>
