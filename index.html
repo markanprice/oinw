@@ -16,8 +16,13 @@
 
       const googleBaseUrl = 'https://www.google.co.uk/search?q=Test+';
       const blankTarget = '_blank';
-      const postmanEchoUrl = 'https://postman-echo.com/get';
-  
+      const postmanEchoBaseUrl = 'https://postman-echo.com';
+      const postmanEchoPath = '/get';
+
+      const api = axios.create({ baseURL: postmanEchoBaseUrl });
+      const defaults = JSON.stringify(api.defaults);
+      alert(`API - defaults: {defaults}`);
+
       function openInNewWindow1(suffix) {
         window.open(googleBaseUrl + suffix, blankTarget);
       }
@@ -25,12 +30,12 @@
         openInNewWindow1('1B');
       }
       function onTest1CClick() {
-        axios.get(postmanEchoUrl).then(() => {
+        api.get(postmanEchoPath).then(() => {
           openInNewWindow1('1C');
         });
       }
       function onTest1DClick() {
-        axios.get(postmanEchoUrl).then(() => {
+        api.get(postmanEchoPath).then(() => {
           setTimeout(() => {
             openInNewWindow1('1D');
           });
@@ -49,12 +54,12 @@
         openInNewWindow2('2B');
       }
       function onTest2CClick() {
-        axios.get(postmanEchoUrl).then(() => {
+        api.get(postmanEchoPath).then(() => {
           openInNewWindow2('2C');
         });
       }
       function onTest2DClick() {
-        axios.get(postmanEchoUrl).then(() => {
+        api.get(postmanEchoPath).then(() => {
           setTimeout(() => {
             openInNewWindow2('2D');
           });
