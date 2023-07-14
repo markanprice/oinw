@@ -19,10 +19,10 @@
       const postmanEchoBaseUrl = 'https://postman-echo.com';
       const postmanEchoPath = '/get';
 
-      alert(`API - axios is {axios === undefined ? 'undefined' : 'defined'}`);
+      alert(`API - axios is ${axios === undefined ? 'undefined' : 'defined'}`);
       const api = axios.create({ baseURL: postmanEchoBaseUrl });
       const defaults = JSON.stringify(api.defaults);
-      alert(`API - defaults: {defaults}`);
+      alert(`API - defaults: ${defaults}`);
 
       function openInNewWindow1(suffix) {
         window.open(googleBaseUrl + suffix, blankTarget);
