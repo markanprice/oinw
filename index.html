@@ -18,10 +18,10 @@
 
       const googleBaseUrl = 'https://www.google.co.uk/search?q=Test+';
       const blankTarget = '_blank';
-      const postmanEchoBaseUrl = 'https://postman-echo.com';
-      const postmanEchoPath = '/get';
+      const officialJokeApiBaseUrl = 'https://official-joke-api.appspot.com/';
+      const officialJokeApiPath = '/random_joke';
 
-      const api = axios.create({ baseURL: postmanEchoBaseUrl });
+      const api = axios.create({ baseURL: officialJokeApiBaseUrl });
 
       function openInNewWindow1(suffix) {
         window.open(googleBaseUrl + suffix, blankTarget);
@@ -30,13 +30,13 @@
         openInNewWindow1('1B');
       }
       function onTest1CClick() {
-        api.get(postmanEchoPath).then(() => {
+        api.get(officialJokeApiPath).then(function () {
           openInNewWindow1('1C');
         });
       }
       function onTest1DClick() {
-        api.get(postmanEchoPath).then(() => {
-          setTimeout(() => {
+        api.get(officialJokeApiPath).then(function () {
+          setTimeout(function () {
             openInNewWindow1('1D');
           });
         });
@@ -54,13 +54,13 @@
         openInNewWindow2('2B');
       }
       function onTest2CClick() {
-        api.get(postmanEchoPath).then(() => {
+        api.get(officialJokeApiPath).then(function () {
           openInNewWindow2('2C');
         });
       }
       function onTest2DClick() {
-        api.get(postmanEchoPath).then(() => {
-          setTimeout(() => {
+        api.get(officialJokeApiPath).then(function () {
+          setTimeout(function () {
             openInNewWindow2('2D');
           });
         });
